@@ -1,0 +1,14 @@
+img {
+  width: 100px;
+  height: 100px;
+  resize: both;
+  border-radius: 20px;
+}
+
+tr, td, th {
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+}

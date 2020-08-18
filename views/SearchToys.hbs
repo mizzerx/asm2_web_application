@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body class="d-flex align-items-center flex-column">
+  <h1>Search Toys</h1>
+  <hr><br>
+  <form action="/search" method="post" class="input-group mb-3" style="width: 300px;">
+    <input type="text" class="form-control" placeholder="Search" name="key">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="submit">Go</button>
+    </div>
+  </form>
+  </div>
+  <table class="table-bordered">
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>Option</th>
+    </tr>
+    {{#each data}}
+    <tr>
+      <td><img src={{img}} alt="img" class="rounded"></td>
+      <td>{{name}}</td>
+      <td>{{price}}$</td>
+      <td>
+        {{#if status}}
+        <span style="color: green;">Available</span>
+        {{else}}
+        <span style="color: red;">Not Availble</span>
+        {{/if}}
+      </td>
+      <td>
+        <button onclick="window.location.href='/updatepage?id={{_id}}'">Update</button>
+        <br><br>
+        <button onclick="window.location.href='/delete?id={{_id}}'">Delete</button>
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+  <hr><br>
+  <a href="/alltoys">Click here to go back</a>
+</body>
+
+</html>

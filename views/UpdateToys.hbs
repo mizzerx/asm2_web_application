@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Update Toys</title>
+</head>
+
+<body class="d-flex align-items-center flex-column">
+  <h1>Update Toys</h1>
+  <hr><br>
+  {{#each data}}
+  <form action="/update" method="post" class="form-group">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="" placeholder={{name}} value={{name}} class="form-control" required><br><br>
+    <label for="price">Price: </label>
+    <input type="number" name="price" id="" placeholder={{price}} value={{price}} class="form-control" required><br><br>
+    <label for="status">Status: </label>
+    <select name="status" id="">
+      <option value="true">Available</option>
+      <option value="false">Not Available</option>
+    </select><br><br>
+    <label for="img">Image Link: </label>
+    <input type="url" name="img" id="" pattern="https?://.+" title="Include http:// or https://" placeholder="Paste link here" value={{img}} class="form-control" required><br><br>
+    <input type="hidden" name="_id" value={{_id}}>
+    <input type="submit" value="Update" class="btn btn-primary">
+  </form>
+  {{/each}}
+  <hr><br>
+  <a href="/alltoys">Click here to go back</a>
+</body>
+
+</html>
