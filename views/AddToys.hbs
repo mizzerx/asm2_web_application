@@ -14,13 +14,12 @@
   
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="Validate.js"></script>
   <title>Add Toys</title>
 </head>
 <body class="d-flex align-items-center flex-column">
   <h1>Add Toys</h1>
   <hr><br>
-  <form action="/addtoys" method="post" class="form-group" name="add" onsubmit="return(addValidate())">
+  <form action="/addtoys" method="post" class="form-group">
     <label for="name">Name: </label>
     <input type="text" name="name" id="" class="form-control"><br><br>
     <label for="price">Price: </label>
@@ -34,6 +33,7 @@
     <input type="text" name="img" id="" class="form-control" placeholder="Paste link here"><br><br>
     <input type="submit" value="Add" class="btn btn-primary">
   </form>
+  <label for="error" style="color: red;">{{e}}</label>
   <hr><br>
   <a href="/alltoys">Click here to go back</a>
 </body>

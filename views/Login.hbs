@@ -15,7 +15,6 @@
   
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="Validate.js"></script>
   <title>Document</title>
 </head>
 
@@ -26,13 +25,15 @@
   <div align="center">
     <h1>Login</h1>
     <hr>
-    <form action="/login" method="post" class="form-group" name="login" onsubmit="return(validate())">
+    <form action="/login" method="post" class="form-group">
       <label for="usr">Username: </label><br>
       <input type="text" name="usr" class="form-control"><br>
       <label for="pwd">Password: </label><br>
       <input type="password" name="pwd" class="form-control"><br>
       <input type="submit" value="Login" class="btn btn-primary">
     </form>
+    <br>
+    <label for="usr-err" style="color: red;">{{e}}</label><br>
   </div>
   <br><br>
   <hr>
